@@ -4,7 +4,7 @@ class Router
 {
     public function run()
     {
-        // home será el controlador por defecto
+        
         $controllerName = $_GET['controller'] ?? 'home';
         $actionName     = $_GET['action'] ?? 'index';
 

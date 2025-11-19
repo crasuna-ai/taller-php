@@ -7,7 +7,7 @@ class CalendarController
         $year  = isset($_GET['year'])  ? (int)$_GET['year']  : (int)date('Y');
         $month = isset($_GET['month']) ? (int)$_GET['month'] : (int)date('m');
 
-        // Normalizamos mes y año por si se sale del rango
+        
         if ($month < 1) {
             $month = 12;
             $year--;
@@ -50,7 +50,7 @@ class CalendarController
             );
         }
 
-        // Redirigimos manteniendo año y mes si vienen en la URL
+        
         $year  = $_GET['year']  ?? date('Y');
         $month = $_GET['month'] ?? date('m');
 

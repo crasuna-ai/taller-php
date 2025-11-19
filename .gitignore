@@ -1,23 +1,22 @@
-# Dependencias PHP (Composer)
 vendor/
 
-# Configuración sensible
+
 .env
 .env.*
 
-# Archivos del IDE/Editor
+
 .vscode/
 .idea/
 nbproject/
 
-# Archivos del sistema
+
 .DS_Store
 Thumbs.db
 
-# Logs y temporales
+
 *.log
 *.tmp
 *.cache
 
-# Carpeta de subidas (si la usas)
+
 public/uploads/

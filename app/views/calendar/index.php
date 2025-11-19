@@ -112,7 +112,7 @@ if ($nextMonth > 12) {
         <tbody>
             <tr>
                 <?php
-                // celdas vacías antes del primer día
+                
                 for ($i = 1; $i < $startWeekday; $i++): ?>
                     <td></td>
                 <?php endfor; ?>
@@ -149,7 +149,7 @@ if ($nextMonth > 12) {
                     $currentWeekday++;
                 endfor;
 
-                // celdas vacías al final
+                
                 while ($currentWeekday <= 7) {
                     echo '<td></td>';
                     $currentWeekday++;

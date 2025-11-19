@@ -84,10 +84,9 @@
         let matches = 0;
 
         function generateCards() {
-            // 8 pares = 16 cartas; usamos letras A-H
+            // profe aqui si quiere puede cambiar los valores de las cartas a numeros 
             const values = ['A','B','C','D','E','F','G','H'];
-            const pairValues = values.concat(values); // duplicamos
-            // barajar
+            const pairValues = values.concat(values); 
             for (let i = pairValues.length - 1; i > 0; i--) {
                 const j = Math.floor(Math.random() * (i + 1));
                 [pairValues[i], pairValues[j]] = [pairValues[j], pairValues[i]];
@@ -105,7 +104,7 @@
                 cardEl.classList.add('card');
                 cardEl.dataset.value = val;
                 cardEl.dataset.index = index;
-                cardEl.textContent = ''; // oculta al inicio
+                cardEl.textContent = ''; 
 
                 cardEl.addEventListener('click', () => handleCardClick(cardEl));
 
@@ -187,7 +186,7 @@
             createBoard();
         });
 
-        // Inicializar
+        
         createBoard();
     </script>
 </body>

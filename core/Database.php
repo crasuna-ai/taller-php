@@ -8,9 +8,9 @@ class Database
     {
         if (self::$instance === null) {
             $host = 'localhost';
-            $db   = 'taller_mvc';   // nombre de tu BD
-            $user = 'root';         // usuario por defecto en XAMPP
-            $pass = '';             // normalmente vacío
+            $db   = 'taller_mvc';   
+            $user = 'root';         
+            $pass = '';             
 
             $dsn  = "mysql:host=$host;dbname=$db;charset=utf8mb4";
 
