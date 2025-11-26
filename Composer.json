@@ -1,0 +1,24 @@
+{
+    "name": "taller/laravel-like-exercises",
+    "description": "Ejercicios organizados con una estructura inspirada en Laravel",
+    "type": "project",
+    "require": {
+        "php": "^8.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Taller",
+            "email": "example@example.com"
+        }
+    ],
+    "scripts": {
+        "post-autoload-dump": [
+            "@php -r \"file_exists('bootstrap/cache') || mkdir('bootstrap/cache', 0777, true);\""
+        ]
+    }
+}
