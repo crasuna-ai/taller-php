@@ -24,8 +24,8 @@ $router->post('/tareas/alternar', [TareasController::class, 'toggle']);
 $router->get('/propinas', [PropinasController::class, 'create']);
 $router->post('/propinas', [PropinasController::class, 'store']);
 
-$router->get('/contraseñas', [ContrasenasController::class, 'show']);
-$router->post('/contraseñas', [ContrasenasController::class, 'generate']);
+$router->get('/contrasenas', [ContrasenasController::class, 'show']);
+$router->post('/contrasenas', [ContrasenasController::class, 'generate']);
 
 $router->get('/cronometro', [CronometroController::class, 'index']);
 
