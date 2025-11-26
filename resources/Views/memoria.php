@@ -1,34 +1,79 @@
 <div class="card">
-    <h1><?= htmlspecialchars($title); ?></h1>
-    <p>Voltea las cartas y encuentra las parejas. Cada recarga mezcla nuevamente el tablero.</p>
+    <h1><?= htmlspecialchars($title ?? 'Memorama'); ?></h1>
+    <p>Encuentra todas las parejas.</p>
     <div id="grid" class="grid"></div>
 </div>
+
+<style>
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(80px, 1fr));
+        gap: 10px;
+        margin-top: 1rem;
+    }
+
+    .grid button {
+        height: 100px;
+        font-size: 2rem;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        cursor: pointer;
+    }
+
+    .grid button.found {
+        background: #4caf50;
+        color: #fff;
+    }
+</style>
+
 <script>
-    const icons = ['🍎','🍌','🍇','🍊','🍉','🍒'];
+document.addEventListener('DOMContentLoaded', () => {
+    const icons = ['A','B','C','D','E','F'];
     const pairs = [...icons, ...icons].sort(() => Math.random() - 0.5);
     const grid = document.getElementById('grid');
-    let first = null;
 
-    pairs.forEach((icon, index) => {
+    let first = null;
+    let lock = false;
+    let foundCount = 0;
+
+    pairs.forEach(icon => {
         const card = document.createElement('button');
-        card.className = 'card btn muted';
-        card.style.height = '90px';
         card.dataset.icon = icon;
         card.textContent = '❓';
-        card.onclick = () => flip(card);
+        card.addEventListener('click', () => flip(card));
         grid.appendChild(card);
     });
 
     function flip(card) {
-        if (card.classList.contains('found') || card === first) return;
+        if (lock || card.classList.contains('found') || card === first) return;
+
         card.textContent = card.dataset.icon;
-        if (!first) { first = card; return; }
+
+        
+        if (!first) {
+            first = card;
+            return;
+        }
+
         if (first.dataset.icon === card.dataset.icon) {
             first.classList.add('found');
             card.classList.add('found');
+            foundCount += 2;
+
+            if (foundCount === pairs.length) {
+                alert('¡Ganaste!');
+            }
+
+            first = null;
         } else {
-            setTimeout(() => { first.textContent = '❓'; card.textContent = '❓'; }, 600);
+            lock = true;
+            setTimeout(() => {
+                first.textContent = '❓';
+                card.textContent = '❓';
+                first = null;
+                lock = false;
+            }, 600);
         }
-        first = null;
     }
+});
 </script>

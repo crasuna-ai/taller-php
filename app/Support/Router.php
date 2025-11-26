@@ -6,17 +6,17 @@ class Router
 {
     private array $routes = [];
 
-    public function get(string $uri, callable $action): void
+    public function get(string $uri, callable|array|string $action): void
     {
         $this->addRoute('GET', $uri, $action);
     }
 
-    public function post(string $uri, callable $action): void
+    public function post(string $uri, callable|array|string $action): void
     {
         $this->addRoute('POST', $uri, $action);
     }
 
-    private function addRoute(string $method, string $uri, callable $action): void
+    private function addRoute(string $method, string $uri, callable|array|string $action): void
     {
         $this->routes[$method][$this->normalizeUri($uri)] = $action;
     }
@@ -35,7 +35,7 @@ class Router
         $this->callAction($action);
     }
 
-    private function callAction(callable $action): void
+    private function callAction(callable|array|string $action): void
     {
         if (is_array($action)) {
             [$class, $method] = $action;

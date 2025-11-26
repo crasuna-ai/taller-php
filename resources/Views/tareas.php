@@ -2,7 +2,7 @@
     <h1><?= htmlspecialchars($title); ?></h1>
     <form method="POST" action="/tareas">
         <label for="title">Nueva tarea</label>
-        <input id="title" name="title" required placeholder="Ej. Preparar presentación" />
+        <input id="title" name="title" required placeholder="Ej. tarea php" />
         <button class="btn" type="submit">Agregar</button>
     </form>
     <h3>Listado</h3>

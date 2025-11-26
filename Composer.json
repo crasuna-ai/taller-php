@@ -1,6 +1,6 @@
 {
     "name": "taller/laravel-like-exercises",
-    "description": "Ejercicios organizados con una estructura inspirada en Laravel",
+    "description": "Ejercicios organizados con una estructura en Laravel",
     "type": "project",
     "require": {
         "php": "^8.1"
@@ -13,7 +13,7 @@
     "authors": [
         {
             "name": "Taller",
-            "email": "example@example.com"
+            "email": ""
         }
     ],
     "scripts": {

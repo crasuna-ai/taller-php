@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\CalendarioController;
-use App\Http\Controllers\ContrasenasController;
+use App\Http\Controllers\ContraseñasController;
 use App\Http\Controllers\CronometroController;
 use App\Http\Controllers\GastosController;
 use App\Http\Controllers\InicioController;
