@@ -82,7 +82,7 @@
             <li><a href="/tareas">Tareas</a></li>
             <li><a href="/gastos">Gastos</a></li>
             <li><a href="/propinas">Propinas</a></li>
-            <li><a href="/contraseñas">Contraseñas</a></li>
+            <li><a href="/contrasenas">Contraseñas</a></li>
             <li><a href="/cronometro">Cronómetro</a></li>
         </ul>
     </nav>
