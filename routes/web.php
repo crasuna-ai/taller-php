@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\CalendarioController;
-use App\Http\Controllers\ContraseñasController;
 use App\Http\Controllers\CronometroController;
 use App\Http\Controllers\GastosController;
 use App\Http\Controllers\InicioController;
@@ -11,6 +10,7 @@ use App\Http\Controllers\PropinasController;
 use App\Http\Controllers\RecetasController;
 use App\Http\Controllers\ReservasController;
 use App\Http\Controllers\TareasController;
+use App\Http\Controllers\ContrasenasController;
 use App\Support\Router;
 
 /** @var Router $router */
@@ -24,8 +24,8 @@ $router->post('/tareas/alternar', [TareasController::class, 'toggle']);
 $router->get('/propinas', [PropinasController::class, 'create']);
 $router->post('/propinas', [PropinasController::class, 'store']);
 
-$router->get('/contraseñas', [ContraseñasController::class, 'show']);
-$router->post('/contraseñas', [ContraseñasController::class, 'generate']);
+$router->get('/contraseñas', [ContrasenasController::class, 'show']);
+$router->post('/contraseñas', [ContrasenasController::class, 'generate']);
 
 $router->get('/cronometro', [CronometroController::class, 'index']);
 

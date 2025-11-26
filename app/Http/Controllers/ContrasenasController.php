@@ -4,11 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Support\View;
 
-class ContraseñasController
+class ContrasenasController
 {
     public function show(): void
     {
-        View::render('contraseñas', [
+        View::render('contrasenas', [
             'title' => 'Generador de contraseñas',
             'password' => null,
         ]);
@@ -24,7 +24,7 @@ class ContraseñasController
             $contraseña .= $caracteres[random_int(0, strlen($caracteres) - 1)];
         }
 
-        View::render('contraseñas', [
+        View::render('contrasenas', [
             'title' => 'Generador de contraseñas',
             'password' => $contraseña,
         ]);
